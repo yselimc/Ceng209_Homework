@@ -1,0 +1,35 @@
+Room:1
+Description:A dark and damp cave with a faint smell of moss.
+Up:0
+Down:0
+Left:0
+Right:2
+Items:torch, rope
+Creature:goblin,30,5
+
+Room:2
+Description:A small chamber with ancient carvings on the walls.
+Up:3
+Down:4
+Left:1
+Right:0
+Items:scroll, dagger
+Creature:skeleton,25,7
+
+Room:3
+Description:A brightly lit room with a large chandelier hanging from the ceiling.
+Up:0
+Down:2
+Left:0
+Right:0
+Items:coin, potion
+Creature:bat,10,2
+
+Room:4
+Description:A library filled with dusty old books and cobwebs.
+Up:2
+Down:0
+Left:0
+Right:0
+Items:spells, key
+Creature:ghost,40,10
