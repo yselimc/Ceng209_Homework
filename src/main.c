@@ -1,90 +1,60 @@
-#include "game.h"
-#include <string.h>
-#include <stdio.h>
-
-
-void display_menu()
-{
-    printf("Available commands, type the number:\n");
-    printf(" (1) status           : Displays player status.\n");
-    printf(" (2) move <direction> : Move in a direction (up, down, left, right).\n");
-    printf(" (3) look             : Look around the current floor.\n");
-    printf(" (4) inventory        : Show your inventory.\n");
-    printf(" (5) pickup <item>    : Pick up an item in the floor.\n");
-    printf(" (6) drop <item>      : Drop an item in the floor.\n");
-    printf(" (7) attack           : Attack a creature in the floor.\n");
-    printf(" (8) save <filepath>  : Save the game state to a file.\n");
-    printf(" (9) load <filepath> : Load the game state from a file.\n");
-    printf(" (e) exit            : Exit the game.\n");
-}
+#include "engine.h"
 
 int main()
 {
-    // Initialize the game
-    GameState *state = init_game();
+    GameState *state = initGame();
 
-    // Display the welcome message
-    printf("Welcome to the Dungeon Adventure Game!\n");
-    char command[50];
-    // Main game loop
-    while (1)
+    char choice;
+    do
     {
-        printf("\n");
-        display_menu();
-        printf("\n> ");
-        scanf("%s", command);
+        printf("\nChoose an action:\n");
+        printf("0. Quit\n");
+        printf("1. Look around\n");
+        printf("2. Pick an item\n");
+        printf("3. Drop an item\n");
+        printf("4. Attack a creature\n");
+        printf("5. Use an item in combat\n");
+        printf("6. Move to another room\n");
+        printf("7. Display player status\n");
+        printf("8. Show inventory\n");
+        printf("9. Save game\n");
+        printf("Enter your choice: ");
+        scanf(" %c", &choice);
 
-        if (strcmp(command, "status") == 0 || strcmp(command, "1") == 0)
+        switch (choice)
         {
-            display_player_status(state);
-        }
-        else if (strcmp(command, "move") == 0 || strcmp(command, "2") == 0)
-        {
-            move_player(state);
-        }
-        else if (strcmp(command, "look") == 0 || strcmp(command, "3") == 0)
-        {
-            look_around(state);
-        }
-        else if (strcmp(command, "inventory") == 0 || strcmp(command, "4") == 0)
-        {
-            show_inventory(&state->player);
-        }
-        else if (strcmp(command, "pickup") == 0 || strcmp(command, "5") == 0)
-        {
-            pick_item(state);
-        }
-        else if (strcmp(command, "drop") == 0 || strcmp(command, "6") == 0)
-        {
-            drop_item(state);
-        }
-        else if (strcmp(command, "attack") == 0 || strcmp(command, "7") == 0)
-        {
-            attack_creature(state);
-        }
-        else if (strcmp(command, "save") == 0 || strcmp(command, "8") == 0)
-        {
-            char filepath[MAX_DESC];
-            printf("Enter the file path to save the game: ");
-            scanf("%s", filepath);
-            save_game_state(state, filepath);
-        }
-        else if (strcmp(command, "load") == 0 || strcmp(command, "9") == 0)
-        {
-            char filepath[MAX_DESC];
-            printf("Enter the file path to load the game: ");
-            scanf("%s", filepath);
-            load_game_state(state, filepath);
-        }
-        else if (strcmp(command, "exit") == 0 || strcmp(command, "e") == 0)
-        {
-            printf("Exiting the game.\n");
+        case '1':
+            lookAround(state);
+            break;
+        case '2':
+            pickItem(state);
+            break;
+        case '3':
+            dropItem(state);
+            break;
+        case '4':
+            attackCreature(state);
+            break;
+        case '5':
+            useItem(state);
+            break;
+        case '6':
+            movePlayer(state);
+            break;
+        case '7':
+            displayStatus(state);
+            break;
+        case '8':
+            showInventory(state);
+            break;
+        case '9':
+            printf("Enter the name of the save file: ");
+            char saveFile[256];
+            scanf("%s", saveFile);
+            saveGameState(state, saveFile);
             break;
         }
-        else
-        {
-            printf("Unknown command. Type 'help' for a list of commands.\n");
-        }
-    }
-    
+
+    } while (choice != '0');
+    return 0;    
 }

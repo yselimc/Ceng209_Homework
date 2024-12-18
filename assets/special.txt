@@ -1,0 +1,11 @@
+BlackSword, 20
+GreatSword, 10
+LeatherArmour, 10
+Dagger, 5
+Excalibur, 100
+Helmet, 15
+HealthPotion, 10
+FireSpell, 25
+IceSpell, 15
+DarkSpell, 35
+GreatHealthPotion, 25

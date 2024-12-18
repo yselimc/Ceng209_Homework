@@ -1,35 +1,91 @@
-Room:1
-Description:A dark and damp cave with a faint smell of moss.
-Up:0
-Down:0
-Left:0
-Right:2
-Items:torch, rope
-Creature:goblin,30,5
+RoomCount:10
 
-Room:2
-Description:A small chamber with ancient carvings on the walls.
-Up:3
-Down:4
-Left:1
-Right:0
-Items:scroll, dagger
-Creature:skeleton,25,7
+Room:0  
+Description:A dark and damp cave with a faint smell of moss.  
+Up:-1  
+Down:-1  
+Left:-1  
+Right:1  
+Items:HealthPotion, LeatherArmour  
+Creature:Goblin,30,5  
 
-Room:3
-Description:A brightly lit room with a large chandelier hanging from the ceiling.
-Up:0
-Down:2
-Left:0
-Right:0
-Items:coin, potion
-Creature:bat,10,2
+Room:1  
+Description:A small chamber with ancient carvings on the walls.  
+Up:2  
+Down:3  
+Left:0  
+Right:-1  
+Items:Scroll, Dagger  
+Creature:Skeleton,25,7  
 
-Room:4
-Description:A library filled with dusty old books and cobwebs.
-Up:2
-Down:0
-Left:0
-Right:0
-Items:spells, key
-Creature:ghost,40,10
+Room:2  
+Description:A brightly lit room with a large chandelier hanging from the ceiling.  
+Up:-1  
+Down:1  
+Left:-1  
+Right:-1  
+Items:Coin, HealthPotion  
+Creature:bat,10,2  
+
+Room:3  
+Description:A library filled with dusty old books and cobwebs.  
+Up:1  
+Down:-1  
+Left:-1  
+Right:4  
+Items:IceSpell, Key  
+Creature:ghost,40,10  
+
+Room:4  
+Description:A library filled with dusty old books and cobwebs.  
+Up:-1  
+Down:-1  
+Left:3  
+Right:5  
+Items:BlackSword, Shield  
+Creature:wolf,40,10  
+
+Room:5  
+Description:A library filled with dusty old books and cobwebs.  
+Up:6  
+Down:-1  
+Left:4  
+Right:-1  
+Items:HealthPotion, GreatSword  
+Creature:Humanoid,40,7  
+
+Room:6  
+Description:A library filled with dusty old books and cobwebs.  
+Up:7  
+Down:5  
+Left:-1  
+Right:-1  
+Items:FireSpell, Key  
+Creature:ZombieBear,60,3  
+
+Room:7  
+Description:A library filled with dusty old books and cobwebs.  
+Up:-1  
+Down:6  
+Left:8  
+Right:9  
+Items:Excalibur, Helmet  
+Creature:GoblinGang,40,10  
+
+Room:8  
+Description:A library filled with dusty old books and cobwebs.  
+Up:-1  
+Down:-1  
+Left:2  
+Right:7  
+Items:DarkSpell, GreatHealthPotion  
+Creature:Witch,60,30  
+
+Room:9  
+Description:Final Boss room.  
+Up:-1  
+Down:-1  
+Left:7  
+Right:-1  
+Items:Crown  
+Creature:KingGoblin,120,35  
